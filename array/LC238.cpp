@@ -22,47 +22,47 @@ vector<int> productExceptSelfBruteForce(vector<int> &nums)
     return ans;
 }
 
-vector<int> productExceptSelfOptimal(vector<int> &nums)
-{
-    int allProd = 1;
+// vector<int> productExceptSelfOptimal(vector<int> &nums)
+// {
+//     int allProd = 1;
 
-    vector<int> ans(nums.size(), 0);
-    int flag = 0;
-    for (int i = 0; i < nums.size(); i++)
-    {
-        if (nums[i] == 0)
-        {
-            flag++;
-            continue;
-        }
-        allProd *= nums[i];
-    }
+//     vector<int> ans(nums.size(), 0);
+//     int flag = 0;
+//     for (int i = 0; i < nums.size(); i++)
+//     {
+//         if (nums[i] == 0)
+//         {
+//             flag++;
+//             continue;
+//         }
+//         allProd *= nums[i];
+//     }
 
-    for (int i = 0; i < nums.size(); i++)
-    {
-        if (flag >= 2)
-        {
-            break;
-        }
-        else
-        {
-            if (flag > 0)
-            {
-                if (nums[i] == 0)
-                {
-                    ans[i] = allProd;
-                }else{
-                    continue;
-                }
+//     for (int i = 0; i < nums.size(); i++)
+//     {
+//         if (flag >= 2)
+//         {
+//             break;
+//         }
+//         else
+//         {
+//             if (flag > 0)
+//             {
+//                 if (nums[i] == 0)
+//                 {
+//                     ans[i] = allProd;
+//                 }else{
+//                     continue;
+//                 }
                 
-            }else{
-                ans[i] = allProd / nums[i];
-            }
-        }
-    }
+//             }else{
+//                 ans[i] = allProd / nums[i];
+//             }
+//         }
+//     }
 
-    return ans;
-}
+//     return ans;
+// }
 vector<int> productExceptSelfOptimalWithoutDivision(vector<int> &nums)
 {
     int n = nums.size();
